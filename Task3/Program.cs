@@ -28,14 +28,17 @@ class Book
 }
 class Library()
 {
+    //спичсок книг
     public List<Book> books = new List<Book>();
 
+    //метод для добавления книги
     public void Add(Book book)
     {
 
         books.Add(book);
     }
 
+    //метод для вывода доступных книг
     public void SchowBooks()
     {
         if (books.Count == 0)
@@ -47,6 +50,8 @@ class Library()
             Console.WriteLine(book.GetInfo());
         }
     }
+
+    //метод для поиска книги по названию
     public Book FindBook(string title)
     {
         foreach (var book in books) 
@@ -56,7 +61,7 @@ class Library()
                 return book; 
             }
         }
-        return null; // Если книга не найдена }
+        return null;
     }
     static void Main()
     {
@@ -64,8 +69,10 @@ class Library()
         library.Add(new Book("Мой лучший враг", "Эли Фрей", 448));
         library.Add(new Book("Белый клык", "Джек Лондон", 384));
         library.Add(new Book("Воскресни за 40 дней", "Медина Мирай", 272));
+
         Console.WriteLine("Доступные книги в библиотеке:");
         library.SchowBooks();
+
         Console.WriteLine("Введите название книги для поиска(с заглавной буквы):");
         string findTitle = Console.ReadLine();
         Book foundBook = library.FindBook(findTitle);
