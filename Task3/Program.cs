@@ -28,7 +28,7 @@ class Book
 }
 class Library()
 {
-    //спичсок книг
+    //список книг
     public List<Book> books = new List<Book>();
 
     //метод для добавления книги
